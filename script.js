@@ -14,7 +14,7 @@ function writeCalendar(scheduleMonth,year){
     for (let day = 1; day <= days; day++){
         calendar.innerHTML += `
             <tr>
-                <td>${day}</td>
+                <td>${day}.</td>
                 <td>
                     <select>
                         <option class="day">Celý den</option>
