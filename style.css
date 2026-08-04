@@ -1,32 +1,73 @@
 *{
-    margin: 5px;
+    margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
+
 body {
-    background-color: antiquewhite;
+    background-color: rgb(250, 235, 215);
     color:black;
     font-family: "JetBrains Mono", monospace;
     min-height: 100vh;
-    padding: 20PX;
+    margin: 0px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: auto;
 }
-table{
-    border-collapse: collapse;
-}
-th,td{
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-}
+
 select{
     background-color: lavenderblush;
     border-radius: 8px;
-    width: 120px;
+    width: 100%;
     height: 35px;
     font-size: 16px;
+}
+@media (max-width: 900px) {
+    #calendar {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    row-gap: 20px;
+    column-gap: 1px;
+}
+.day-box{
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color:rgb(248, 228, 202) ;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+}
+.day-box:hover{
+    transform: translateY(-2px);
+}
+.day-number{
+    
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.calendar-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+button{
+    width: 120px;
+    height: 60px;
+    font-size: 16px;
+    border-radius: 25px;
 }
