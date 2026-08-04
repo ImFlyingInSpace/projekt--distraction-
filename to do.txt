@@ -1,0 +1,8 @@
+vytvoreni prvni stranky
+vytvorit kalendar
+moznost zapsani se do kalendare 
+ulozeni smen do databaze
+pridani zamestnancu
+rozdeleni na zamestnance a manazery
+prihlaseni uzivatelu
+vice ruznych firem
