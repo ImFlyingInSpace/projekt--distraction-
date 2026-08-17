@@ -1,4 +1,4 @@
-//konstanty a premety
+//konstanty a predmety
 
 const today = new Date();
 let month = today.getMonth();
@@ -11,6 +11,7 @@ if(scheduleMonth>11){
 }
 console.log(scheduleMonth);
 const months = ["Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen","Listopad","Prosinec"];
+const save = document.getElementById("save");
 
 
 
@@ -22,6 +23,7 @@ const months = ["Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Če
 
 
 //funkce
+
 
 function getDaysInMonth(scheduleMonth, scheduleYear){
     return new Date(scheduleYear, scheduleMonth +1, 0).getDate();
@@ -52,9 +54,26 @@ function writeCalendar(scheduleMonth,scheduleYear){
     }
 }
 
-
+save.addEventListener("click", function(){
+    let hasError = false;
+    const availability = [];
+    const selects = document.querySelectorAll("select");
+    for (const select of selects){
+        //console.log(select.value);
+        if(select.value===""){
+            alert("Vyplňte prosím všechny dny.");
+            hasError = true;
+            break;
+        }
+        availability.push(select.value);
+    }
+    if(!hasError){
+        localStorage.setItem("availability",JSON.stringify(availability));
+    }
+});
 
 
 //volani
 
 writeCalendar(scheduleMonth,scheduleYear);
+//document.getElementById("name")
